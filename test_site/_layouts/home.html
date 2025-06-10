@@ -1,6 +1,9 @@
 ---
 layout: default
 ---
+<head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 
 <div class="home">
   {%- if page.title -%}
@@ -27,12 +30,19 @@ layout: default
       <li>
         <span class="post-meta">{{ post.date | date: date_format }}</span>
         <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-          {% if post.locked %}
-           Locked up
-          {% endif %}
+            <div style="display: inline">
+                <div style="display: inline-block;">
+                    {% if post.locked %}
+                    <i class="fa fa-lock" color="black"></i>
+                    {% endif %}
+                </div>
+                <div style="display: inline-block;">
+                    <a class="post-link" href="{{ post.url | relative_url }}">
+                        {{ post.title | escape }}
+                    </a>
+                </div>
+            </div>
+          
         </h3>
         {%- if site.minima.show_excerpts -%}
           {{ post.excerpt }}

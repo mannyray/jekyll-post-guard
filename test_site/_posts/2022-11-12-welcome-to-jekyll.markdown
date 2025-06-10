@@ -7,11 +7,18 @@ locked: true
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
+<!--lock_start-->
+
 Jekyll requires blog post files to be named according to the following format:
+
+<!--lock_end-->
 
 `YEAR-MONTH-DAY-title.MARKUP`
 
 Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+
+<!--lock_start-->
+
 
 Jekyll also offers powerful support for code snippets:
 
@@ -33,3 +40,4 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
 ![img]({{ site.url }}/photos/pexels-pixabay-210243.jpg)
 
 
+<!--lock_end-->

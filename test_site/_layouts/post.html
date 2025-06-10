@@ -7,9 +7,6 @@ layout: default
         <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
     </header>
     <article class="post-content">
-        {% if page.locked %}
-             <h2>Locked up</h2>
-        {% endif %}
-        {{ content }}
+        {{ content | lock }}
     </article>
 </div>
