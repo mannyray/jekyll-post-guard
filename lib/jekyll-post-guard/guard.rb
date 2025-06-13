@@ -5,6 +5,7 @@ module Jekyll
 	module LOCK
 		def lock(text)
             plugin_dir = File.join(Jekyll.configuration({})['plugins_dir'],"jekyll-post-guard")
+            
             styling_html_content_text = File.read( File.join(plugin_dir,"style.html" ))
             header_html_content_text = File.read( File.join(plugin_dir,"header.html" ))
             lock_html = File.read( File.join(plugin_dir,"lock.html" ))
@@ -14,9 +15,20 @@ module Jekyll
 			doc.inner_html = doc.inner_html.gsub(/(<!--lock_start-->)(.*?)(<!--lock_end-->)/m) do |match|
                 counter = counter + 1
                 html_text = $2
-                #to_be_locked = Nokogiri::HTML(html_text)
+                #<!--lock:{data:directory}-->
+                arguments = html_text.each_line.detect { |line| !line.strip.empty? }
                 
                 lock_html_copy = lock_html
+                if arguments.include?("<!--lock:")
+                    json_text = arguments[/<!--lock:(\{.*?\})-->/, 1]
+                    parsed_data = JSON.parse(json_text) if json_text
+                    print parsed_data
+                    intro_file_html = File.read( File.join(Jekyll.configuration({})['lock_dir'],parsed_data["data"],"intro/lock.html") )
+                    
+                    lock_html_copy = intro_file_html
+                end
+                
+                
                 lock_html_sub = lock_html_copy.gsub("unlockBox", "unlockBox"+counter.to_s)
                 
                 
