@@ -23,13 +23,22 @@ module Jekyll
                     json_text = arguments[/<!--lock:(\{.*?\})-->/, 1]
                     parsed_data = JSON.parse(json_text) if json_text
                     print parsed_data
-                    intro_file_html = File.read( File.join(Jekyll.configuration({})['lock_dir'],parsed_data["data"],"intro/lock.html") )
+                    custom_lock_dir = File.join(Jekyll.configuration({})['lock_dir'],parsed_data["data"])
+                    intro_file_html = File.read( File.join(custom_lock_dir , "intro/lock.html" ))
                     
-                    lock_html_copy = intro_file_html
+                    lock_assets = Dir.children(File.join(custom_lock_dir,"intro"))
+                    # move the lock_assets to assets
+                    
+                    # should be http://localhost:4000 -> actual site URL and append lock directory
+                    
+                    lock_html_copy = intro_file_html.gsub("<img src=\"","<img src=\"http://localhost:4000/")
                 end
                 
                 
                 lock_html_sub = lock_html_copy.gsub("unlockBox", "unlockBox"+counter.to_s)
+                
+                # TODO: localhost
+                
                 
                 
                 obfuscated_html = Base64.strict_encode64(html_text)
@@ -40,6 +49,7 @@ module Jekyll
                           el = document.getElementById('locked-#{counter}');\
                           console.log(atob(\"#{obfuscated_html}\"));\
                           el.innerHTML = atob(\"#{obfuscated_html}\");\
+                          console.log(window.location.origin);\
                     }")
                                          
                 

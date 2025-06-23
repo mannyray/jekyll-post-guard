@@ -9,6 +9,8 @@ You’ll find this post in your `_posts` directory. Go ahead and edit it and re-
 
 <!--lock_start-->
 <!--lock:{"data":"sudoku"}-->
+<!--lock:intro_start-->
+<!--lock:intro_end-->
 
 Jekyll requires blog post files to be named according to the following format:
 

@@ -34,3 +34,5 @@ gem 'nokogiri', '~> 1.10'
 gem "csv"
 gem "base64"
 gem "bigdecimal"
+
+gem "pathname", "~> 0.4.0"
