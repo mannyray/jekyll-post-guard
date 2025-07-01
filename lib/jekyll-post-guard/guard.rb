@@ -22,7 +22,7 @@ module Jekyll
                 if arguments.include?("<!--lock:")
                     json_text = arguments[/<!--lock:(\{.*?\})-->/, 1]
                     parsed_data = JSON.parse(json_text) if json_text
-                    print parsed_data
+                    #print parsed_data
                     custom_lock_dir = File.join(Jekyll.configuration({})['lock_dir'],parsed_data["data"])
                     intro_file_html = File.read( File.join(custom_lock_dir , "intro/lock.html" ))
                     
@@ -43,6 +43,7 @@ module Jekyll
                 
                 obfuscated_html = Base64.strict_encode64(html_text)
                 
+                # TODO - in some sort of function
                 lock_html_sub = lock_html_sub.sub("{/*replace*/}","{\
                           document.getElementById('locked-#{counter}').style.display = 'block';\
                           document.getElementById('lock-#{counter}').style.display = 'none';\

@@ -9,8 +9,7 @@ You’ll find this post in your `_posts` directory. Go ahead and edit it and re-
 
 <!--lock_start-->
 <!--lock:{"data":"sudoku"}-->
-<!--lock:intro_start-->
-<!--lock:intro_end-->
+
 
 Jekyll requires blog post files to be named according to the following format:
 
@@ -41,6 +40,5 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
 
 
 ![img]({{ site.url }}/photos/pexels-pixabay-210243.jpg)
-
 
 <!--lock_end-->
