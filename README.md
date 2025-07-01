@@ -40,7 +40,25 @@ The resulting rendered page will look like the following:
 
 <!--TODO: explain the various lock sections -->
 
-### 5. Optionally, you can also modify your site header to specify `locked: true` as in the following example:
+### 5.
+
+```
+---
+layout: default
+---
+<div class="post">
+    <header class="post-header">
+        <h1 class="post-title">{{ page.title }}</h1>
+        <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+    </header>
+    <article class="post-content">
+        {{ content | lock }}
+    </article>
+</div>
+
+```
+
+### 6. Optionally, you can also modify your site header to specify `locked: true` as in the following example:
 
 ```
 ---
