@@ -39,19 +39,19 @@ module Jekyll
                 lock_html_sub = lock_html_copy.gsub("unlockBox", "unlockBox"+counter.to_s)
                                 
                 
-                
-                obfuscated_html = Base64.strict_encode64(html_text)
+                obfuscated_html = html_text
                 
                 lock_html_sub = lock_html_sub.sub("{/*replace*/}","{\
                           document.getElementById('activity-#{counter}').style.display = 'block';\
                           document.getElementById('lock-#{counter}').style.display = 'none';\
                     }")
-                    
+
                 activity_html_sub = activity_html.sub("{/*replace*/}","{\
-                          document.getElementById('locked-#{counter}').style.display = 'block';\
-                          document.getElementById('activity-#{counter}').style.display = 'none';\
-                          el = document.getElementById('locked-#{counter}');\
-                          el.innerHTML = atob(\"#{obfuscated_html}\");\
+                        const content = document.getElementById('locked-#{counter}');\
+                        content.style.display = 'block';\
+                        void content.offsetWidth;\
+                        content.style.opacity = \"1\";\
+                        document.getElementById('activity-#{counter}').style.display = 'none';\
                     }")
                 activity_html_sub = activity_html_sub.gsub("unlock_content_button","disabled_button-#{counter}")
                         
@@ -63,6 +63,7 @@ module Jekyll
                 #{activity_html_sub}
                 </div>
                 <div id="locked-#{counter}" class="locked_off">
+                #{html_text}
                 </div>
                 HTML
             end
