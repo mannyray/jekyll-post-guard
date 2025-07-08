@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unlock Box</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .grey-box {
+      width: 100%;
+      background-color: #ccc;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      text-align: center;
+    }
+      input[type="text"] {
+        font-size: 16px;
+      }
+
+      .smooth-button {
+            background-color: white;
+            color: black;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+          }
+      
+      .smooth-button:hover {
+            background-color: #357ABD;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+          }
+      
+      .smooth-button:disabled {
+        background-color: #ccc;
+        color: #666;
+        cursor: not-allowed;
+        border: 1px solid #999;
+        opacity: 0.6;
+      }
+  </style>
+</head>
+<body>
+
+  <div class="grey-box">
+      
+      <div>
+          <h2>Simple Math Quiz</h2>
+          <p>What is 2 + 2?</p>
+          <p></p>
+          <input type="text" id="answer" />
+          <p></p>
+          <button class="smooth-button" onclick="checkAnswer()">Submit</button>
+          <p></p>
+          <div id="result"></div>
+          <br>
+          
+          <script>
+              function checkAnswer() {
+                  const userAnswer = document.getElementById("answer").value.trim();
+                  const resultDiv = document.getElementById("result");
+                  
+                  if (userAnswer === "4") {
+                      resultDiv.style.display = "block";
+                      el = document.getElementById('result');
+                      el.innerHTML = "Correct! 🎉! You can now unlock content";
+                      document.getElementById("unlock_content_button").disabled = false;
+                      
+                  } else {
+                      resultDiv.style.display = "block";
+                      el = document.getElementById('result');
+                      el.innerHTML = "Incorrect!";
+                      
+                  }
+              }
+          </script>
+      </div>
+      
+      
+    <button class="smooth-button" id="unlock_content_button" disabled onclick="unlockBox()">Unlock</button>
+  </div>
+
+  <script>
+    function unlockBox() {/*replace*/}
+  </script>
+</body>
+</html>

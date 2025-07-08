@@ -72,6 +72,8 @@ locked: true <- all values work TODO?
 
 This will alert users as to which ...
 
+TODO image of home page
+
 Modify `_layouts` `home.html` to have:
 
 ```
@@ -96,6 +98,8 @@ and
                 </div>
             </div>
 ```
+
+7. style.css modified ?
 
 ## Creating your own lock
 
