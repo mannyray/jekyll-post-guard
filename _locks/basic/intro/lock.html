@@ -3,51 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet_font" href="font-awesome.min.css">
   <title>Unlock Box</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    .grey-box {
-      width: 100%;
-      background-color: #ccc;
-      padding-top: 20px;
-      padding-bottom: 20px;
-      text-align: center;
-      border-radius: 8px;
-      box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
-    }
-      
-  .smooth-button {
-        background-color: white;
-        color: black;
-        padding: 14px 28px;
-        border: none;
-        border-radius: 8px;
-        font-size: 16px;
-        cursor: pointer;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-      }
-  
-  .smooth-button:hover {
-        background-color: #357ABD;
-        color: white;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-      }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <div class="grey-box">
       <p><b><i class="fa fa-lock" color="black"></i> This section is locked.</b></p>
       <p><b>Complete a knowledge check to keep reading!</b></p>
-      <img src="check.png" width="50%"><br>
+      <img src="assets/check.png" width="50%"><br>
           <p></p>
     <button class="smooth-button" onclick="unlockBox()">Proceed</button>
   </div>

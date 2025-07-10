@@ -30,7 +30,8 @@ module Jekyll
                     intro_file_html = File.read( File.join(custom_lock_dir , "intro/lock.html" ))
                     lock_assets_dir = File.join(custom_lock_dir,"intro")
                     # move the lock_assets to assets
-                    lock_html_copy = intro_file_html.gsub("<img src=\"","<img src=\"/"+lock_assets_dir+"/")
+                    lock_html_copy = intro_file_html.gsub(" src=\""," src=\"/"+lock_assets_dir+"/")
+                    lock_html_copy = lock_html_copy.gsub(" href=\""," href=\"/"+lock_assets_dir+"/")
                     
                     activity_html = File.read( File.join(custom_lock_dir , "activity/activity.html" ))
                 end
