@@ -28,12 +28,16 @@ module Jekyll
                     custom_lock_dir = File.join(Jekyll.configuration({})['lock_dir'],parsed_data["data"])
                     
                     intro_file_html = File.read( File.join(custom_lock_dir , "intro/lock.html" ))
-                    lock_assets_dir = File.join(custom_lock_dir,"intro")
+                    lock_intro_assets_dir = File.join(custom_lock_dir,"intro")
                     # move the lock_assets to assets
-                    lock_html_copy = intro_file_html.gsub(" src=\""," src=\"/"+lock_assets_dir+"/")
-                    lock_html_copy = lock_html_copy.gsub(" href=\""," href=\"/"+lock_assets_dir+"/")
+                    lock_html_copy = intro_file_html.gsub(/src="(?!https?:\/\/)/," src=\"/"+lock_intro_assets_dir+"/")
+                    lock_html_copy = lock_html_copy.gsub(/href="(?!https?:\/\/)/," href=\"/"+lock_intro_assets_dir+"/")
                     
+                    lock_activity_assets_dir = File.join(custom_lock_dir,"activity")
                     activity_html = File.read( File.join(custom_lock_dir , "activity/activity.html" ))
+                    activity_html = activity_html.gsub(/src="(?!https?:\/\/)/," src=\"/"+lock_activity_assets_dir+"/")
+                    activity_html = activity_html.gsub(/href="(?!https?:\/\/)/," href=\"/"+lock_activity_assets_dir+"/")
+
                 end
                 
                 # counters, in case you have multiple locks

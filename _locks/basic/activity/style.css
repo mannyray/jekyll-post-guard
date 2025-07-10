@@ -4,12 +4,14 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.grey-box {
+.grey-box-activity {
     width: 100%;
-    background-color: #ccc;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    background-color: #BFBFBF;
+    padding-top: 10px;
+    padding-bottom: 15px;
     text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
 }
 
 input[type="text"] {

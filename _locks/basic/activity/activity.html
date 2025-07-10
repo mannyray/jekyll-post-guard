@@ -8,8 +8,7 @@
 </head>
 <body>
 
-  <div class="grey-box">
-      
+  <div class="grey-box-activity">
       <div>
           <h2>Simple Math Quiz</h2>
           <p>What is 2 + 2?</p>
@@ -36,14 +35,12 @@
                       resultDiv.style.display = "block";
                       el = document.getElementById('result');
                       el.innerHTML = "Incorrect!";
-                      
                   }
               }
           </script>
+          <button class="smooth-button" id="unlock_content_button" disabled onclick="unlockBox()">Unlock</button>
       </div>
       
-      
-    <button class="smooth-button" id="unlock_content_button" disabled onclick="unlockBox()">Unlock</button>
   </div>
 
   <script>
