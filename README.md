@@ -3,10 +3,7 @@
 The repository hosts code for a plugin for [Jekyll based sites](https://jekyllrb.com/) that adds a lock features to articles.
 
 > [!NOTE]
-> A more detailed README with motivation and potential use cases of this plugin is incoming. More lock variants will be added too.
-
- [!IMPORTANT]  
-> Check out a live demo at 
+> A more detailed README with motivation and potential use cases of this plugin is incoming. More lock variants will be added too. 
 
 ![](assets/basic_demo.gif) 
 
