@@ -13,11 +13,11 @@ The repository hosts code for a plugin for [Jekyll based sites](https://jekyllrb
 
 Copy the plugin folder `jekyll-post-gaurd` from this repository `lib` directory into your site's `_plugin` folder.
 
-### 2. Copy the `_locks` directory from this repository to your site's root folder. 
+### 2. Copy the `locks` directory from this repository to your site's root folder. 
 
-### 3. Specify `_locks` directory in your `_config.yml`
+### 3. Specify `locks` directory in your `_config.yml`
 
-In your site's root `_config.yml`, specify the directory of the newly added `_locks` folder via `lock_dir: _locks`.
+In your site's root `_config.yml`, specify the directory of the newly added `locks` folder via `lock_dir: locks`.
 
 ### 4. Modify your `post.html` layout
 
@@ -120,12 +120,12 @@ You will notice that there are two stages to the lock. The first is the "intro" 
 | -------- | ------- |
 | ![](assets/intro.png)  | ![](assets/activity.png)    |
 
-To create a lock you must create a folder within your `_locks` directory named after the name of your future lock. The one pictured above you can find as a sample within this repository's `_locks` and it is called `basic`.
+To create a lock you must create a folder within your `locks` directory named after the name of your future lock. The one pictured above you can find as a sample within this repository's `locks` and it is called `basic`.
 
 Within the lock folder (e.g. within `basic`) you must create two folders (`intro` and `activity`) with the html files named `lock.html` and `activity.html` (respectively):
 
 ```
-├── _locks
+├── locks
 │   └── basic
 │       ├── activity
 │       │   └── activity.html
@@ -163,7 +163,7 @@ along with an associated button:
 
 Common to both `intro/lock.html` and `activity/activity.html` is that you can include additional resource files like images and css within the folders for a more complicated layout:
 ```
-├── _locks
+├── locks
 │   └── basic
 │       ├── activity
 │       │   ├── activity.html
