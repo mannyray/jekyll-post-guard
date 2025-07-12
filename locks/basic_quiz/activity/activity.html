@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Canada Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="quiz-box">
+    <h2>Canada Quiz</h2>
+
+    <div id="question1" class="question">
+      <p>1. What is the capital of Canada?</p>
+      <button onclick="checkAnswer(1, 'Toronto')">Toronto</button>
+      <button onclick="checkAnswer(1, 'Ottawa')">Ottawa</button>
+      <button onclick="checkAnswer(1, 'Vancouver')">Vancouver</button>
+      <p id="error1" class="error"></p>
+    </div>
+
+    <div id="question2" class="question hidden">
+      <p>2. Which leaf is on the Canadian flag?</p>
+      <button onclick="checkAnswer(2, 'Oak')">Oak</button>
+      <button onclick="checkAnswer(2, 'Maple')">Maple</button>
+      <button onclick="checkAnswer(2, 'Pine')">Pine</button>
+      <p id="error2" class="error"></p>
+    </div>
+
+    <div id="question3" class="question hidden">
+      <p>3. What are the two official languages of Canada?</p>
+      <button onclick="checkAnswer(3, 'English and Spanish')">English and Spanish</button>
+      <button onclick="checkAnswer(3, 'English and French')">English and French</button>
+      <button onclick="checkAnswer(3, 'English and German')">English and German</button>
+      <p id="error3" class="error"></p>
+    </div>
+
+    <div id="congrats" class="hidden">
+      <h3>🎉 Congratulations! You've completed the quiz! 🎉</h3>
+      <button onclick="unlockBox()">Unlock Content</button>
+    </div>
+  </div>
+
+  <script>
+    const answers = {
+      1: 'Ottawa',
+      2: 'Maple',
+      3: 'English and French'
+    };
+
+    function checkAnswer(qNum, selected) {
+      const errorEl = document.getElementById(`error${qNum}`);
+      if (selected === answers[qNum]) {
+        document.getElementById(`question${qNum}`).classList.add('hidden');
+        const next = document.getElementById(`question${qNum + 1}`);
+        if (next) {
+          next.classList.remove('hidden');
+        } else {
+          document.getElementById('congrats').classList.remove('hidden');
+        }
+      } else {
+        errorEl.textContent = "❌ Incorrect! Try again.";
+      }
+    }
+
+      function unlockBox() {/*replace*/}
+  </script>
+</body>
+</html>
