@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flappy Canada</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="gameContainer">
+    <canvas id="gameCanvas" width="400" height="600"></canvas>
+  </div>
+
+  <center>
+  <button id="unlockButton" disabled onclick="unlockBox()">Read the Rest of the Blog Post</button>
+  </center>
+
+  <script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+    const unlockButton = document.getElementById('unlockButton');
+
+    const flagImg = new Image();
+    flagImg.src = 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Canada.svg';
+
+    let gameStarted = false;
+    let gameOver = false;
+    let gravity = 0.1; // Slightly less gravity
+    let lift = -4;
+    let velocity = 0;
+    let flagY = canvas.height / 2;
+    let pipes = [];
+    let frameCount = 0;
+    let score = 0;
+    const pipeWidth = 60;
+    const gap = 200;
+
+    function resetGame() {
+      gameOver = false;
+      velocity = 0;
+      flagY = canvas.height / 2;
+      pipes = [];
+      frameCount = 0;
+      score = 0;
+    }
+
+    function drawFlag() {
+      ctx.drawImage(flagImg, 50, flagY, 40, 30);
+    }
+
+    function drawPipes() {
+      for (let pipe of pipes) {
+        ctx.fillStyle = '#228B22';
+        ctx.fillRect(pipe.x, 0, pipeWidth, pipe.top);
+        ctx.fillRect(pipe.x, pipe.top + gap, pipeWidth, canvas.height - pipe.top - gap);
+      }
+    }
+
+    function updatePipes() {
+      for (let pipe of pipes) {
+        pipe.x -= 1.0; // ❗ Slower pipe movement
+
+        if (!pipe.passed && pipe.x + pipeWidth < 50) {
+          pipe.passed = true;
+          score++;
+        }
+
+        if (
+          50 + 40 > pipe.x && 50 < pipe.x + pipeWidth &&
+          (flagY < pipe.top || flagY + 30 > pipe.top + gap)
+        ) {
+          gameOver = true;
+        }
+      }
+
+      pipes = pipes.filter(pipe => pipe.x + pipeWidth > 0);
+
+      if (frameCount % 300 === 0) {
+        const top = Math.floor(Math.random() * (canvas.height - gap - 100)) + 20;
+        pipes.push({ x: canvas.width, top, passed: false });
+      }
+    }
+
+    function drawScore() {
+      ctx.fillStyle = 'black';
+      ctx.font = '20px sans-serif';
+      ctx.fillText('Score: ' + score, 10, 30);
+    }
+
+    function drawInstructions() {
+      ctx.fillStyle = '#333';
+      ctx.font = '18px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText("Welcome to Flappy Canada 🇨🇦", canvas.width / 2, canvas.height / 2 - 60);
+      ctx.fillText("Tap or press Space to fly", canvas.width / 2, canvas.height / 2 - 30);
+      ctx.fillText("Score at least 5 to unlock the blog post", canvas.width / 2, canvas.height / 2);
+      ctx.fillText("Press Space or Tap to Start", canvas.width / 2, canvas.height / 2 + 40);
+      ctx.textAlign = 'start';
+    }
+
+    function drawGame() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      if (!gameStarted) {
+        drawInstructions();
+        drawFlag();
+        return requestAnimationFrame(drawGame);
+      }
+
+      velocity += gravity;
+      flagY += velocity;
+
+      drawFlag();
+      drawPipes();
+      drawScore();
+
+      updatePipes();
+
+      if (flagY > canvas.height || flagY < 0) {
+        gameOver = true;
+      }
+
+      if (gameOver) {
+        if (score >= 5) {
+          unlockButton.disabled = false;
+        }
+
+        ctx.fillStyle = 'red';
+        ctx.font = '28px sans-serif';
+        ctx.fillText('Game Over', canvas.width / 2 - 60, canvas.height / 2);
+        ctx.font = '18px sans-serif';
+        ctx.fillText('Score: ' + score, canvas.width / 2 - 30, canvas.height / 2 + 30);
+        ctx.fillText('Press Space or Tap to Retry', canvas.width / 2 - 100, canvas.height / 2 + 60);
+        return;
+      }
+
+      frameCount++;
+      requestAnimationFrame(drawGame);
+    }
+
+    function startGame() {
+      if (!gameStarted || gameOver) {
+        gameStarted = true;
+        resetGame();
+        drawGame();
+      } else {
+        velocity = lift;
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.code === 'Space') {
+        startGame();
+      }
+    });
+
+    canvas.addEventListener('touchstart', () => {
+      startGame();
+    });
+
+  function unlockBox() {/*replace*/}
+
+
+    // Start initial draw loop
+    drawGame();
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.code === 'Space') {
+        e.preventDefault(); // prevent scroll
+        startGame();
+      }
+    });
+  </script>
+</body>
+</html>
