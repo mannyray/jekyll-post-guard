@@ -19,7 +19,9 @@ Now you may interject..."this doesn't seem all that secure...". For my response 
 
 This paywall system is an honor based one. Kind of like the take-one-and-leave-one bookshelves some neighbourhoods have (as seen in image below). Now it is is 100% possible that someone might steal all the books, but due to the small scale and local nature of the book shelf this is considered a low risk.
 
-![](/photos/IMG_3016.jpeg)
+<center>
+<img src="/photos/IMG_3016.jpeg" width="50%">
+</center>
 
 
 People may get around the paywall here like they do with paywalled newspaper website (see [here](https://news.ycombinator.com/item?id=36060891) for example), but that is fine. If using this tool, you should be okay with that. This paywall would just provide a support method for those readers of yours that want to fund your content - similar to how anyone can go to a library and read an author's book for free versus those who want to buy a copy of the book for themselves to support the author.
