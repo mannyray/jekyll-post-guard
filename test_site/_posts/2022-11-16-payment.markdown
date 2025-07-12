@@ -1,0 +1,26 @@
+---
+layout: post
+title:  "Adding a payment method!"
+date:   2022-11-16 16:27:06 -0600
+categories: jekyll update
+locked: true
+---
+
+Here we create a feature where we lock content behind a paywall. The web page viewer would need a password to see it. The viewer would pay for and get access to the password via some external third party tool/site since Jekyll and this plugin are designed for static sites. Static sites, since they are not connected to a backend or database, cannot securely store passwords or generate them meaning the password is stored within the html of this page!
+
+You can have a unique password for each article if you choose. For the free loading readers, you can modify the activity below such that it gives the option of solving some activity like a sudoku puzzle so the user pays with time instead.
+
+
+Now you may interject..."this doesn't seem all that secure...". For my response please enter the password below (hint: it's `password`):
+
+ 
+<!--lock_start-->
+<!--lock:{"data":"payment_style"}-->
+
+This paywall system is an honor based one. Kind of like the take-one-and-leave-one bookshelves some neighbourhoods have (as seen in image below). Now it is is 100% possible that someone might steal all the books, but due to the small scale and local nature of the book shelf this is considered a low risk.
+![](/photos/IMG_3016.JPG)
+
+
+People may get around the paywall here like they do with paywalled newspaper website (see [here](https://news.ycombinator.com/item?id=36060891) for example), but that is fine. If using this tool, you should be okay with that. This paywall would just provide a support method for those readers of yours that want to fund your content - similar to how anyone can go to a library and read an author's book for free versus those who want to buy a copy of the book for themselves to support the author.
+
+<!--lock_end-->

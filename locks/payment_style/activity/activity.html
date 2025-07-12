@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unlock Box</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="grey-box-activity">
+      <div>
+          <h2>This content is for paid subscribers.</h2>
+          <p>Please enter the article password:</p>
+          <p></p>
+          <input type="text" id="answer" />
+          <p></p>
+          <button class="smooth-button" onclick="checkAnswer()">Submit</button>
+          <p></p>
+          <div id="result"></div>
+          <br>
+          
+          <script>
+              function checkAnswer() {
+                  const userAnswer = document.getElementById("answer").value.trim();
+                  const resultDiv = document.getElementById("result");
+                  
+                  if (userAnswer === "password") {
+                      resultDiv.style.display = "block";
+                      el = document.getElementById('result');
+                      el.innerHTML = "Correct! 🎉! You can now unlock content";
+                      document.getElementById("unlock_content_button").disabled = false;
+                      
+                  } else {
+                      resultDiv.style.display = "block";
+                      el = document.getElementById('result');
+                      el.innerHTML = "Incorrect!";
+                  }
+              }
+          </script>
+          <button class="smooth-button" id="unlock_content_button" disabled onclick="unlockBox()">Unlock</button>
+      </div>
+      
+  </div>
+
+  <script>
+    function unlockBox() {/*replace*/}
+  </script>
+</body>
+</html>
