@@ -9,11 +9,8 @@ module Jekyll
             plugin_dir = File.join(Jekyll.configuration({})['plugins_dir'],"jekyll-post-guard")
             
             styling_html_content_text = File.read( File.join(plugin_dir,"style.html" ))
-            header_html_content_text = File.read( File.join(plugin_dir,"header.html" ))
             
-            
-            
-            text = header_html_content_text + styling_html_content_text + text
+            text = styling_html_content_text + text
 			doc = Nokogiri::HTML(text)
             counter = 0
 			doc.inner_html = doc.inner_html.gsub(/(<!--lock_start-->)(.*?)(<!--lock_end-->)/m) do |match|
