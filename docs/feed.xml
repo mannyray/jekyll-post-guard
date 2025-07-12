@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2025-07-11T21:38:10-06:00</updated><id>/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="/jekyll/update/2022/11/12/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2022-11-12T15:27:06-07:00</published><updated>2022-11-12T15:27:06-07:00</updated><id>/jekyll/update/2022/11/12/welcome-to-jekyll</id><content type="html" xml:base="/jekyll/update/2022/11/12/welcome-to-jekyll.html"><![CDATA[<p>In this post I have included the lock below which is a simple math quiz, demonstrating that you can require a base level of knowledge before someone consuming your article. If you complete the quiz correctly, you will get to see an image.</p>
+
+<p>In addition, this posts info, in markdown, includes the <code class="language-plaintext highlighter-rouge">locked: true</code>:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">title</span><span class="pi">:</span>  <span class="s2">"</span><span class="s">Welcome</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">Jekyll!"</span>
+<span class="na">date</span><span class="pi">:</span>   <span class="s">2022-11-12 16:27:06 -0600</span>
+<span class="na">categories</span><span class="pi">:</span> <span class="s">jekyll update</span>
+<span class="na">locked</span><span class="pi">:</span> <span class="no">true</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<p>It is not necessary to set <code class="language-plaintext highlighter-rouge">locked: true</code>, if you are using a lock.</p>
+
+<!--lock_start-->
+<!--lock:{"data":"basic"}-->
+
+<p><img src="/photos/pexels-pixabay-210243.jpg" alt="img" /></p>
+
+<!--lock_end-->]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[In this post I have included the lock below which is a simple math quiz, demonstrating that you can require a base level of knowledge before someone consuming your article. If you complete the quiz correctly, you will get to see an image.]]></summary></entry><entry><title type="html">Desktop only</title><link href="/jekyll/update/2022/11/12/desktop_only.html" rel="alternate" type="text/html" title="Desktop only" /><published>2022-11-12T15:27:06-07:00</published><updated>2022-11-12T15:27:06-07:00</updated><id>/jekyll/update/2022/11/12/desktop_only</id><content type="html" xml:base="/jekyll/update/2022/11/12/desktop_only.html"><![CDATA[<p>The image below can only be seen on the desktop. If viewing this page on mobile, you will not be able to see the image below! This is useful if you have designed your post such that you think it is best digested on desktop.</p>
+
+<p>Even though this article has a lock for mobile viewers, we do not set <code class="language-plaintext highlighter-rouge">locked: true</code> in the post’s info:</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">title</span><span class="pi">:</span>  <span class="s2">"</span><span class="s">Desktop</span><span class="nv"> </span><span class="s">only"</span>
+<span class="na">date</span><span class="pi">:</span>   <span class="s">2022-11-12 16:27:06 -0600</span>
+<span class="na">categories</span><span class="pi">:</span> <span class="s">jekyll update</span>
+<span class="na">locked</span><span class="pi">:</span> <span class="no">false</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<!--lock_start-->
+<!--lock:{"data":"desktop_only","fade_time":0}-->
+
+<p><img src="/photos/pexels-pixabay-210243.jpg" alt="img" /></p>
+
+<!--lock_end-->]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[The image below can only be seen on the desktop. If viewing this page on mobile, you will not be able to see the image below! This is useful if you have designed your post such that you think it is best digested on desktop.]]></summary></entry><entry><title type="html">Unlocked: Welcome to Jekyll!</title><link href="/jekyll/update/2022/11/11/unlocked-welcome-to-jekyll.html" rel="alternate" type="text/html" title="Unlocked: Welcome to Jekyll!" /><published>2022-11-11T15:27:06-07:00</published><updated>2022-11-11T15:27:06-07:00</updated><id>/jekyll/update/2022/11/11/unlocked-welcome-to-jekyll</id><content type="html" xml:base="/jekyll/update/2022/11/11/unlocked-welcome-to-jekyll.html"><![CDATA[<p>Just a regular article without a lock. With the <code class="language-plaintext highlighter-rouge">jekyll-post-guard</code> plugin, you can have posts that are locked and posts that are unlocked all mixed together.</p>
+
+<p><img src="/photos/pexels-pixabay-210243.jpg" alt="img" /></p>]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[Just a regular article without a lock. With the jekyll-post-guard plugin, you can have posts that are locked and posts that are unlocked all mixed together.]]></summary></entry></feed>

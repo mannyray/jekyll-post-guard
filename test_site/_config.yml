@@ -57,3 +57,4 @@ plugins:
 
 plugins_dir: ./../lib
 lock_dir: ./../_locks
+destination: ../docs/
