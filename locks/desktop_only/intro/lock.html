@@ -10,11 +10,14 @@
 <body>
 
   <div class="desktop-only-box">
-      <p><span class="icon-lock" style="position: relative; top: 1px;"></span><b> This content can only be viewed on desktop.</b></p>
-          <p></p>
-    <p class="footer-link">locked by
-      <a href="https://github.com/mannyray/jekyll-post-guard" target="_blank">jekyll-post-guard</a>
-    </p>
+    <div class="content-wrapper">
+      <div class="message">
+        <p><span class="icon-lock" style="position: relative; bottom: 0px;"></span>&nbsp;<b>Available on desktop only.</b></p>
+      </div>
+      <p class="footer-link">locked by
+        <a href="https://github.com/mannyray/jekyll-post-guard" target="_blank">jekyll-post-guard</a>
+      </p>
+    </div>
   </div>
 
   <script>
@@ -24,8 +27,6 @@
         unlockBox();
     }
   </script>
-  
-  
 
 </body>
 </html>
