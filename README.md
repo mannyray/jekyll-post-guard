@@ -3,7 +3,7 @@
 The repository hosts code for a plugin for [Jekyll based sites](https://jekyllrb.com/) that adds a lock features to articles.
 
 > [!NOTE]
-> Head to [jekyll-post-guard.szonov.com](http://jekyll-post-guard.szonov.com) to see a live demo of this plugin!
+> Head to [jekyll-post-guard.szonov.com](https://jekyll-post-guard.szonov.com) to see a live demo of this plugin!
 
 > [!NOTE]
 > A more detailed README with motivation and potential use cases of this plugin is incoming. More lock variants will be added too. 
