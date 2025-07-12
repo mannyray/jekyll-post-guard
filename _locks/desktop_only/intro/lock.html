@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="lock_font/lock_icon_style.css">
+  <title>Unlock Box</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="desktop-only-box">
+      <p><span class="icon-lock" style="position: relative; top: 1px;"></span><b> This content can only be viewed on desktop.</b></p>
+          <p></p>
+    <p class="footer-link">locked by
+      <a href="https://github.com/mannyray/jekyll-post-guard" target="_blank">jekyll-post-guard</a>
+    </p>
+  </div>
+
+  <script>
+    function unlockBox() {/*replace*/}
+    
+    if (window.matchMedia("(min-width: 768px)").matches) {
+        unlockBox();
+    }
+  </script>
+  
+  
+
+</body>
+</html>

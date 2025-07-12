@@ -224,5 +224,7 @@ Text that will now be locked off in your blog post.
 ...
 ```
 
+You can also specify `fade_time` (e.g. `<!--lock:{"data":"desktop_only","fade_time":0}-->`) to specify how quick the locked of content will appear once the activity is complete. 
+
 > [!WARNING]
 > Jekyll is a static site generator and due to this all the locking and unlocking happens on the user's browser. Therefore, the locked content is not encrypted and can be accessed relatively easily by someone who knows how to debug html code. However, the average user does not 
